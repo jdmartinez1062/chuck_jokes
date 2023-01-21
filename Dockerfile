@@ -83,6 +83,15 @@ RUN --mount=type=cache,id=prod-apt-cache,sharing=locked,target=/var/cache/apt \
     ${DEPLOY_PACKAGES} \
     && rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
+
+RUN apt-get update &&\
+    apt-get install --yes git curl build-essential
+
+RUN curl -sL https://deb.nodesource.com/setup_current.x | bash - &&\
+    apt-get update && \
+    apt-get install --yes --no-install-recommends nodejs &&\
+    npm install -g yarn
+    
 # copy installed gems
 COPY --from=gems /app /app
 COPY --from=gems /usr/lib/fullstaq-ruby/versions /usr/lib/fullstaq-ruby/versions
@@ -107,6 +116,7 @@ ENV SECRET_KEY_BASE 1
 # ENV AWS_SECRET_ACCESS_KEY=1
 
 # Run build task defined in lib/tasks/fly.rake
+
 ARG BUILD_COMMAND="bin/rails fly:build"
 RUN ${BUILD_COMMAND}
 

@@ -1,11 +1,17 @@
-<nav class='navigator'>
+<nav class="navbar d-flex flex-row-reverse" >
+  <ul class="nav">
+    <li class="nav-item">
+      <%= link_to 'Get Jokes', root_path, class: "nav-link active" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'My Jokes', favourite_jokes_path, class: "nav-link active" %>
+    </li>
+    <li class="nav-item">
+      <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-outline-success" %>
+    </li>
+  </ul>
   <div>
     <div>
-      <div>
-        <%= link_to 'Get Jokes', root_path %>
-        <%= link_to 'My Jokes', favourite_jokes_path %>
-      </div>
-      <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
     </div>
   </div>
 </nav>

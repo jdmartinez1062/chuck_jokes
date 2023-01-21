@@ -7,12 +7,13 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
-  <%= render 'shared/navigate' %>
-  <div>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-  </div>
-  <%= yield %>
-</body>
+  <body class="w-75 d-flex flex-column m-auto">
+    <%= render 'shared/navigate' %>
+    <div>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+    </div>
+    <%= yield %>
+  </body>
 </html>
