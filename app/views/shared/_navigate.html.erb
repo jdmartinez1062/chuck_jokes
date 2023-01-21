@@ -1,10 +1,10 @@
 <nav class='navigator'>
   <div>
     <div>
-      <%= link_to 'Get Jokes', path %>
-      <%= link_to 'My Jokes', path %>
-    </div>
-    <div>
+      <div>
+        <%= link_to 'Get Jokes', root_path %>
+        <%= link_to 'My Jokes', favourite_jokes_path %>
+      </div>
       <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
     </div>
   </div>

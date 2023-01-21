@@ -7,8 +7,12 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
-  <body>
-    <%= render 'shared/logout' %>
-    <%= yield %>
-  </body>
+  <%= render 'shared/navigate' %>
+  <div>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+  </div>
+  <%= yield %>
+</body>
 </html>
