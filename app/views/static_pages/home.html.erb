@@ -1,0 +1,9 @@
+<h1>Welcome!</h1>
+<div>
+  <div>
+    <h3> Hand Curated Chuck Norris Jokes </h3>
+  </div>
+  <%= turbo_frame_tag "joke_frame_turbo" do %>
+    <%= render partial: 'joke_partial' %>
+  <% end %>
+</div>
