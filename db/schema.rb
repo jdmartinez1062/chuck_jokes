@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_20_215807) do
   create_enum "key_type", ["aead-ietf", "aead-det", "hmacsha512", "hmacsha256", "auth", "shorthash", "generichash", "kdf", "secretbox", "secretstream", "stream_xchacha20"]
 
   create_table "favourite_jokes", force: :cascade do |t|
-    t.string "joke_url", null: false
+    t.string "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

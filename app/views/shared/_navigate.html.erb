@@ -1,0 +1,19 @@
+<nav class="navbar d-flex flex-row-reverse" >
+  <%= turbo_frame_tag "wrapper" do %>
+    <ul class="nav">
+      <li class="nav-item">
+        <%= link_to 'Get Jokes', get_joke_path, class: "nav-link active",  data: { turbo_frame: "joke_frame_turbo", turbo: true} %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'My Jokes', favourite_jokes_path, class: "nav-link active" %>
+      </li>
+      <li class="nav-item">
+        <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-outline-success" %>
+      </li>
+    </ul>
+    <div>
+      <div>
+      </div>
+    </div>
+  <% end %>
+</nav>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   get 'home', to: 'static_pages#home'
- 
-
+  get 'home/joke', to: 'static_pages#joke', as: :get_joke
+  get 'home/favourite_jokes', to: 'static_pages#favourite_jokes', as: :favourite_jokes
+  post 'home/save_joke', to: 'static_pages#save_joke', as: :save_joke
 end
