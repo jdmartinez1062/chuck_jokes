@@ -1,7 +1,3 @@
-<h1>test</h1>
 <%= turbo_frame_tag "joke_frame_turbo" do %>
-  <%= form_with model: @favourite_joke, url: save_joke_path, method: :post do |f| %>
-    <%= f.text_field :text, value: @joke.value, readonly: true, class: "joke-text-form"%>
-    <%= f.submit "Save as Favourite", class: "btn btn-outline-success" %>
-  <% end %>
+  <%= render partial: 'joke_partial' %>
 <% end %>
