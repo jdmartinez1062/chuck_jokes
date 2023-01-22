@@ -6,6 +6,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= turbo_include_tags %>
+    <%= javascript_importmap_tags %>
   </head>
   <body class="w-75 d-flex flex-column m-auto">
     <%= render 'shared/navigate' %>

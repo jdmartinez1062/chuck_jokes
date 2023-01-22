@@ -1,8 +1,11 @@
 class StaticPagesController < ApplicationController
   before_action :new_favourite_joke, only: %i[home joke]
   def home
-    @joke = ChuckApi.get_random_meme
     render :home
+  end
+
+  def joke
+    render :joke
   end
 
   def favourite_jokes
@@ -30,5 +33,6 @@ class StaticPagesController < ApplicationController
 
   def new_favourite_joke
     @favourite_joke = FavouriteJoke.new
+    @joke = ChuckApi.get_random_meme
   end
 end

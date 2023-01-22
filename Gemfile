@@ -48,7 +48,9 @@ gem 'bootsnap', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem 'cssbundling-rails', '~> 1.1'
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'hotwire-rails', '~> 0.1.3'
 gem 'mime-types', '~> 3.1'
 gem 'rest-client', '~> 2.1'
 gem 'will_paginate', '~> 3.3'
@@ -80,5 +82,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem "cssbundling-rails", "~> 1.1"
